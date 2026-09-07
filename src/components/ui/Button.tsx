@@ -1,0 +1,35 @@
+import Link from "next/link";
+import type { ReactNode } from "react";
+
+type ButtonVariant = "solid-purple" | "solid-rose" | "outline-purple" | "solid-white" | "solid-dark";
+
+const variantClasses: Record<ButtonVariant, string> = {
+  "solid-purple":
+    "bg-brand-purple text-white hover:bg-maroon-600 focus-visible:outline-brand-purple",
+  "solid-rose": "bg-rose text-white hover:bg-rose-dark focus-visible:outline-rose",
+  "outline-purple":
+    "border border-brand-purple text-brand-purple hover:bg-brand-purple hover:text-white focus-visible:outline-brand-purple",
+  "solid-white": "bg-white text-maroon-900 hover:bg-neutral-100 focus-visible:outline-white",
+  "solid-dark": "bg-maroon-900 text-white hover:bg-black focus-visible:outline-maroon-900",
+};
+
+export default function Button({
+  href,
+  children,
+  variant = "solid-purple",
+  className = "",
+}: {
+  href: string;
+  children: ReactNode;
+  variant?: ButtonVariant;
+  className?: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className={`inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${variantClasses[variant]} ${className}`}
+    >
+      {children}
+    </Link>
+  );
+}

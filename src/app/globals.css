@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+:root {
+  --color-maroon-900: #2a0a20;
+  --color-maroon-700: #3d0e30;
+  --color-maroon-600: #52123f;
+  --color-brand-purple: #6b1f4d;
+  --color-rose: #c23a63;
+  --color-rose-dark: #a12f52;
+  --color-pink-tint: #f6ecf1;
+  --color-pink-tint-2: #fbeef2;
+}
+
+@theme inline {
+  --color-maroon-900: var(--color-maroon-900);
+  --color-maroon-700: var(--color-maroon-700);
+  --color-maroon-600: var(--color-maroon-600);
+  --color-brand-purple: var(--color-brand-purple);
+  --color-rose: var(--color-rose);
+  --color-rose-dark: var(--color-rose-dark);
+  --color-pink-tint: var(--color-pink-tint);
+  --color-pink-tint-2: var(--color-pink-tint-2);
+  --font-sans: var(--font-poppins);
+}
+
+body {
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
