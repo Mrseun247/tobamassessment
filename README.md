@@ -2,9 +2,12 @@
 
 A pixel-fidelity rebuild of the Tobams Group "Training and Development" marketing page, built with Next.js (App Router) and Tailwind CSS.
 
-**Live URL:** _pending deployment — will be added here once deployed to Vercel_
+**Live URL:** 
+-https://tobamassessment.vercel.app/
 
-**Design reference:** Built from design screenshots (desktop and mobile) provided directly by the client/reviewer. No Figma file link was shared for this assessment — if one exists, it should be added here.
+**Design reference:** 
+-https://www.figma.com/design/wuqCLkK1feTgB6xxSRRwZu/Frontend-Intern-Assessment?node-id=0-1&p=f&t=qxnAKp4Ael8QtLYz-0
+
 
 ## Stack
 
@@ -18,14 +21,9 @@ A pixel-fidelity rebuild of the Tobams Group "Training and Development" marketin
 ## Setup
 
 ```bash
-git clone https://github.com/Mrseun247/tobamassessment.git
-cd tobamassessment
 npm install
 npm run dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000).
-
 ```bash
 npm run build   # production build
 npm run lint    # eslint
