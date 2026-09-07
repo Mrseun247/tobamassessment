@@ -1,7 +1,7 @@
 export const navLinks = [
-  { label: "About", href: "#about", active: true },
-  { label: "What We Do", href: "#what-we-do" },
-  { label: "Jobs", href: "#jobs" },
+  { label: "About", href: "#about", active: true, hasDropdown: true },
+  { label: "What We Do", href: "#what-we-do", hasDropdown: true },
+  { label: "Jobs", href: "#jobs", hasDropdown: true },
   { label: "Projects", href: "#projects" },
   { label: "TG Academy", href: "#tg-academy" },
   { label: "Strategic Partnership", href: "#strategic-partnership" },
@@ -31,7 +31,7 @@ export const featureSections: FeatureSection[] = [
       "Sustainability Training",
       "Customised Training",
     ],
-    image: "/images/corporate-training.svg",
+    image: "/images/corporate-training.png",
     imageAlt: "Facilitator leading a corporate training workshop with a seated group",
     imageFirst: false,
   },
@@ -48,7 +48,7 @@ export const featureSections: FeatureSection[] = [
       "Time Management and Productivity",
       "Career Development",
     ],
-    image: "/images/individual-training.svg",
+    image: "/images/individual-training.png",
     imageAlt: "Trainer reviewing a personalised development plan with a participant",
     imageFirst: true,
   },
@@ -65,7 +65,7 @@ export const featureSections: FeatureSection[] = [
       "Collaborative Learning Environment",
       "Ongoing Support and Resources",
     ],
-    image: "/images/capacity-development.svg",
+    image: "/images/capacity-development.png",
     imageAlt: "Workshop facilitator presenting to a small group around a flipchart",
     imageFirst: false,
   },
@@ -114,23 +114,30 @@ export const testimonials = [
   {
     name: "Aisha Yusuf",
     role: "Founder, CraftHub NG",
-    avatar: "/images/avatar-aisha.svg",
+    avatar: "/images/avatar-aisha.png",
     quote:
       "Working with Tobams Group on our website was a breeze. They understood our vision and transformed it into a beautiful online space. Highly recommend their Website Design service!",
   },
   {
     name: "John Davies",
-    role: "Marketing Manager, E-Commerce Enterprise",
-    avatar: "/images/avatar-john.svg",
+    role: "Marketing Manager, E-Commerce Emporium",
+    avatar: "/images/avatar-john.png",
     quote:
       "Tobams Group's Digital Marketing strategies gave our brand the boost it needed. Simple yet powerful techniques that delivered tangible results. A pleasure to collaborate with!",
   },
   {
     name: "Chinonso Nwankwo",
-    role: "HR Director, TechSolut Solution",
-    avatar: "/images/avatar-chinonso.svg",
+    role: "HR Director, FutureTech Solutions",
+    avatar: "/images/avatar-chinonso.png",
     quote:
       "Tobams Group has been instrumental in our talent acquisition journey. Their Tech Talent Solution service consistently connects us with the right professionals. Reliable and straightforward!",
+  },
+  {
+    name: "Sarah Johnson",
+    role: "CEO of Tech Innovations Inc.",
+    avatar: "/images/avatar-sarah.png",
+    quote:
+      "Tobams Group is a true partner in our journey to digital excellence. Their creativity and technical expertise have propelled our projects to new heights. Their work is top-notch, and the results speak for themselves. I can't recommend them enough!",
   },
 ];
 
@@ -139,23 +146,24 @@ export const footerColumns = [
     heading: "What We Do",
     links: [
       "Sustainability Services",
-      "Strategic Planning and Implementation",
+      "Strategy Planning and Implementation",
       "Tech Talent Solutions",
       "Training and Development",
       "IT Consulting Services",
       "Social Impact",
+      "Talent Recruitment",
     ],
   },
   {
     heading: "Company",
-    links: ["About", "Jobs", "Projects", "Our Founder", "Business Model", "The Team", "Contact Us", "Blog", "FAQs", "Testimonies"],
+    links: ["About", "Jobs", "Projects", "Our Founder", "Business Model", "The Team", "Contact Us", "Blog", "FAQs", "Testimonials"],
   },
   {
     heading: "Solution",
     links: [
       "Tobams Group Academy",
-      "Help & Tech Talent",
-      "Career Ambassadors Program",
+      "Help a Tech Talent",
+      "Campus Ambassadors Program",
       "Join Our Platform",
       "Pricing",
       "Book a Consultation",

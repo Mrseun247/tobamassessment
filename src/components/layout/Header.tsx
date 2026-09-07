@@ -12,11 +12,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-neutral-100 bg-white">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-2 shrink-0" aria-label="Tobams Group home">
-          <Image src="/images/logo-mark.svg" alt="" width={36} height={36} priority />
-          <span className="text-sm font-bold tracking-wide text-maroon-900">
-            TOBAMS GROUP
-          </span>
+        <Link href="/" className="flex items-center shrink-0" aria-label="Tobams Group home">
+          <Image src="/images/logo.png" alt="Tobams Group" width={132} height={43} priority />
         </Link>
 
         <nav aria-label="Primary" className="hidden lg:block">
@@ -26,13 +23,22 @@ export default function Header() {
                 <Link
                   href={link.href}
                   aria-current={link.active ? "page" : undefined}
-                  className={`pb-1 transition-colors hover:text-brand-purple ${
+                  className={`flex items-center gap-1 pb-1 transition-colors hover:text-brand-purple ${
                     link.active
-                      ? "border-b-2 border-maroon-900 font-semibold text-maroon-900"
+                      ? "border-b-2 border-brand-purple font-semibold text-brand-purple"
                       : ""
                   }`}
                 >
                   {link.label}
+                  {link.hasDropdown && (
+                    <svg viewBox="0 0 20 20" fill="currentColor" className="h-3.5 w-3.5" aria-hidden="true">
+                      <path
+                        fillRule="evenodd"
+                        d="M5.2 7.2a1 1 0 0 1 1.4 0L10 10.6l3.4-3.4a1 1 0 1 1 1.4 1.4l-4.1 4.1a1 1 0 0 1-1.4 0L5.2 8.6a1 1 0 0 1 0-1.4Z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  )}
                 </Link>
               </li>
             ))}
@@ -40,9 +46,22 @@ export default function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <Button href="#consultation" variant="outline-purple">
-            Book a Consultation
-          </Button>
+          <Link
+            href="#account"
+            className="inline-flex items-center gap-2 rounded-full bg-brand-purple px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-maroon-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple"
+          >
+            <svg viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4" aria-hidden="true">
+              <path d="M10 10a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm0 1.5c-3 0-6.5 1.5-6.5 4.25V17h13v-1.25c0-2.75-3.5-4.25-6.5-4.25Z" />
+            </svg>
+            Account
+            <svg viewBox="0 0 20 20" fill="currentColor" className="h-3.5 w-3.5" aria-hidden="true">
+              <path
+                fillRule="evenodd"
+                d="M5.2 7.2a1 1 0 0 1 1.4 0L10 10.6l3.4-3.4a1 1 0 1 1 1.4 1.4l-4.1 4.1a1 1 0 0 1-1.4 0L5.2 8.6a1 1 0 0 1 0-1.4Z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </Link>
           <Button href="#assessment" variant="solid-rose">
             Take Assessment
           </Button>
@@ -75,19 +94,34 @@ export default function Header() {
                   href={link.href}
                   aria-current={link.active ? "page" : undefined}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`block rounded-md px-3 py-2.5 transition-colors hover:bg-pink-tint hover:text-brand-purple ${
-                    link.active ? "font-semibold text-maroon-900" : ""
+                  className={`flex items-center justify-between rounded-md px-3 py-2.5 transition-colors hover:bg-pink-tint hover:text-brand-purple ${
+                    link.active ? "font-semibold text-brand-purple" : ""
                   }`}
                 >
                   {link.label}
+                  {link.hasDropdown && (
+                    <svg viewBox="0 0 20 20" fill="currentColor" className="h-3.5 w-3.5" aria-hidden="true">
+                      <path
+                        fillRule="evenodd"
+                        d="M5.2 7.2a1 1 0 0 1 1.4 0L10 10.6l3.4-3.4a1 1 0 1 1 1.4 1.4l-4.1 4.1a1 1 0 0 1-1.4 0L5.2 8.6a1 1 0 0 1 0-1.4Z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  )}
                 </Link>
               </li>
             ))}
           </ul>
           <div className="mt-4 flex flex-col gap-3">
-            <Button href="#consultation" variant="outline-purple" className="w-full">
-              Book a Consultation
-            </Button>
+            <Link
+              href="#account"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-purple px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-maroon-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple"
+            >
+              <svg viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4" aria-hidden="true">
+                <path d="M10 10a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm0 1.5c-3 0-6.5 1.5-6.5 4.25V17h13v-1.25c0-2.75-3.5-4.25-6.5-4.25Z" />
+              </svg>
+              Account
+            </Link>
             <Button href="#assessment" variant="solid-rose" className="w-full">
               Take Assessment
             </Button>

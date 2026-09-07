@@ -6,16 +6,16 @@ export default function ManagementDevelopmentProgram() {
   return (
     <section className="bg-maroon-700" aria-labelledby="management-program-heading">
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-24">
-        <div className="overflow-hidden rounded-2xl">
+        <div className="min-w-0 overflow-hidden rounded-2xl">
           <Image
-            src="/images/management-program.svg"
+            src="/images/management-program.png"
             alt="Organisational leaders reviewing management development materials together"
             width={800}
             height={600}
             className="h-full w-full object-cover"
           />
         </div>
-        <div className="flex flex-col gap-5">
+        <div className="flex min-w-0 flex-col gap-5">
           <h2 id="management-program-heading" className="text-3xl font-bold text-white sm:text-4xl">
             Management Development Program
           </h2>
@@ -29,7 +29,7 @@ export default function ManagementDevelopmentProgram() {
             thinking, communication, and other essential managerial competencies for corporate
             organisations.
           </p>
-          <PillList items={managementProgramHighlights} icon="check" columns={2} />
+          <PillList items={managementProgramHighlights} variant="row" />
         </div>
       </div>
     </section>
