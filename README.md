@@ -5,8 +5,8 @@ A pixel-fidelity rebuild of the Tobams Group "Training and Development" marketin
 **Live URL:**
 https://tobamassessment.vercel.app/
 
-**Design reference:** 
--https://www.figma.com/design/wuqCLkK1feTgB6xxSRRwZu/Frontend-Intern-Assessment?node-id=0-1&p=f&t=qxnAKp4Ael8QtLYz-0
+**Design reference:**
+https://www.figma.com/design/wuqCLkK1feTgB6xxSRRwZu/Frontend-Intern-Assessment?node-id=0-1&p=f&t=qxnAKp4Ael8QtLYz-0
 
 ## Stack
 
