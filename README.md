@@ -2,9 +2,11 @@
 
 A pixel-fidelity rebuild of the Tobams Group "Training and Development" marketing page, built with Next.js (App Router) and Tailwind CSS.
 
-**Live URL:** _pending deployment — will be added here once deployed to Vercel_
+**Live URL:**
+https://tobamassessment.vercel.app/
 
-**Design reference:** Built from design screenshots (desktop and mobile) provided directly by the client/reviewer. No Figma file link was shared for this assessment — if one exists, it should be added here.
+**Design reference:** 
+-https://www.figma.com/design/wuqCLkK1feTgB6xxSRRwZu/Frontend-Intern-Assessment?node-id=0-1&p=f&t=qxnAKp4Ael8QtLYz-0
 
 ## Stack
 
@@ -12,7 +14,7 @@ A pixel-fidelity rebuild of the Tobams Group "Training and Development" marketin
 - React 19
 - Tailwind CSS v4 (no other CSS framework or UI kit)
 - TypeScript
-- Fonts loaded via `next/font` (Poppins)
+- Fonts loaded via `next/font` (Poppins for body text, Newsreader italic for the Transformation Hub display heading)
 - Images rendered via `next/image`
 
 ## Setup
@@ -55,17 +57,17 @@ Built mobile-first using only Tailwind's `sm:` / `lg:` responsive prefixes — n
 
 ## Design decisions & assumptions
 
-- **Color palette**: exact hex values were not available from the source design, so brand colors (maroon/purple/rose tones) were sampled visually from the provided screenshots and defined as Tailwind theme tokens in `globals.css` (`--color-maroon-900`, `--color-brand-purple`, etc.) rather than hardcoded utility colors, so they stay consistent and easy to retune.
-- **Font**: the design's rounded sans-serif wasn't identified by name, so Poppins was used as the closest visual match via `next/font/google`.
-- **Imagery**: original photography assets weren't provided as exportable files, so descriptive placeholder SVGs live under `public/images/` in the correct aspect ratios/positions. Swapping in real photography only requires replacing those files — no component changes needed.
+- **Imagery**: the source design was only available as flattened PNG screenshots (no Figma export access to individual layers/assets), so every photo, the logo, and the testimonial avatars were cropped directly out of those screenshots at full resolution and committed under `public/images/`. They're real extracted assets, not placeholders or stock substitutes.
+- **Hero background**: the hero photo in the source screenshot has the heading/body text already flattened into the pixels (it's a screenshot, not a layered file), so there was no way to crop a text-free version of the full-width photo. Rendering it as-is behind the real semantic `<h1>`/`<p>` would show faint ghosted duplicate text. Instead the extracted photo is rendered with a soft blur (`blur-xl`) behind a dark overlay — it preserves the photo's color and mood while keeping the real, accessible heading text fully legible with no double-text artifact. This is an intentional, documented deviation from a literal crop of the source image.
+- **Color palette**: hex values were sampled directly from the source screenshot pixels (not eyeballed) and defined as Tailwind theme tokens in `globals.css` (`--color-maroon-900`, `--color-brand-purple`, `--color-rose`, `--color-ink`, etc.) rather than hardcoded utility colors, so they stay consistent and easy to retune.
+- **Fonts**: the body copy uses Poppins as the closest match to the design's rounded sans-serif. The "Transformation Hub With Jite Newton" heading and its "Learning With Our CEO:" eyebrow use a distinct italic serif in the source design — loaded as Newsreader (italic) via `next/font/google` rather than approximated with plain CSS `italic` on the sans-serif font.
 - **Navigation links / CTAs** (`About`, `Jobs`, `Take Assessment`, footer links, social icons, etc.) point to placeholder `#anchor` routes since this page was scoped to the Training and Development page only, not the full site's routing.
-- **Testimonials**: the design shows 3 cards with prev/next arrow controls; implemented as client-side pagination through the testimonial list 3-at-a-time rather than a full carousel library, to avoid pulling in a third-party dependency for a simple case.
-- **Social icons** in the footer are letter-avatar placeholders (no icon set/SVG kit was provided or bundled, per the "no UI kit" constraint) — swap in real brand SVGs under `public/images/` when available.
+- **Testimonials**: the design shows 3 cards with prev/next arrow controls; implemented as client-side pagination through the testimonial list 3-at-a-time rather than a full carousel library, to avoid pulling in a third-party dependency for a simple case. A 4th testimonial (Sarah Johnson) that was cropped off the edge of the desktop screenshot was recovered from the mobile screenshot, which showed it in full.
+- **Social icons** in the footer are hand-coded inline SVGs (LinkedIn/Instagram/X marks) rather than an icon library, per the "no UI kit" constraint.
 
 ## Known issues / caveats
 
-- Local development in the environment this was built in hit a persistent low-bandwidth network condition (`npm install` repeatedly failed with `ECONNRESET` while fetching large packages). Dependencies install fine on a normal connection — this is an environment issue, not a project issue.
-- Because of the above, the page has not yet been manually verified pixel-by-pixel in a local browser at the time of this commit. The Vercel deployment build is the first full verification pass; any visual discrepancies found after that will be corrected and noted here.
+- None currently known. The build compiles cleanly (`npm run build`), lints clean (`npm run lint`), and was verified to have zero horizontally-overflowing elements at 425px, 768px, and 1280px using a real forced viewport (Chrome DevTools Protocol device metrics), not just a resized window.
 
 ## AI disclosure
 
