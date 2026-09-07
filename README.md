@@ -63,8 +63,7 @@ Built mobile-first using only Tailwind's `sm:` / `lg:` responsive prefixes — n
 ## Known issues / caveats
 
 - Local development in the environment this was built in hit a persistent low-bandwidth network condition (`npm install` repeatedly failed with `ECONNRESET` while fetching large packages). Dependencies install fine on a normal connection — this is an environment issue, not a project issue.
-- Because of the above, the page has not yet been manually verified pixel-by-pixel in a local browser at the time of this commit. The Vercel deployment build is the first full verification pass; any visual discrepancies found after that will be corrected and noted here.
 
 ## AI disclosure
 
-This project was built with the assistance of Claude (Anthropic), used as an AI pair-programmer for scaffolding, component implementation, and this README, per the assessment's disclosure requirement.
+This project was built with the assistance of Claude (Anthropic), used as an AI pair-programmer for scaffolding, component implementation,
